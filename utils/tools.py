@@ -1,6 +1,8 @@
 import os
+from utils.common import get_file_path
 
 
 def launch():
     '''Launch docker-compose.'''
-    os.system('docker-compose up')
+    path = get_file_path('')
+    os.system(f'cd {path} && docker-compose up')
