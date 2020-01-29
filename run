@@ -14,11 +14,12 @@ def main():
     parser.add_argument("path")
     args = parser.parse_args()
 
-    report_path = get_file_path('volume/report.md')
-    shutil.copy(args.path, report_path)
+    md_path = get_file_path('volume/report.md')
+    shutil.copy(args.path, md_path)
 
     launch()
 
+    report_path = get_file_path('volume/report.pdf')
     print(report_path)
 
 
