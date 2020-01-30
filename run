@@ -6,21 +6,18 @@ import shutil
 from utils.tools import launch
 from utils.common import get_file_path
 
-import argparse
-
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("path")
-    args = parser.parse_args()
+    src_path = os.getcwd()
+    dest_path = get_file_path('volume')
 
-    md_path = get_file_path('volume/report.md')
-    shutil.copy(args.path, md_path)
+    shutil.rmtree(dest_path)
+    shutil.copytree(src_path, dest_path)
 
     launch()
 
     report_path = get_file_path('volume/report.pdf')
-    print(report_path)
+    shutil.copy(report_path, src_path)
 
 
 if __name__ == '__main__':
