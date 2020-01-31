@@ -3,7 +3,7 @@
 import os
 import shutil
 
-from utils.tools import launch
+from utils import compose
 from utils.common import get_file_path
 
 
@@ -14,7 +14,7 @@ def main():
     shutil.rmtree(dest_path)
     shutil.copytree(src_path, dest_path)
 
-    launch()
+    compose.up()
 
     report_path = get_file_path('volume/report.pdf')
     shutil.copy(report_path, src_path)
