@@ -2,6 +2,7 @@ compiler:
   build: "."
   volumes:
    - ./volume:/app/
+   - ./config.yaml:/root/.pandoc-crossref/config.yaml 
   tty: true
   environment:
     - EDITOR=vim
