@@ -1,2 +1,3 @@
-# kujira-tool
-A framework for tool consits of docker image.
+# report-compiler
+
+A environment for compiling reports.
